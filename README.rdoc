@@ -17,8 +17,8 @@ Without option:
   #Post(title:string, content:text)
   class Post
   	
-  	include SqlQuery
-    	sql_query #with no options, it will search in all string or text base field
+    include SqlQuery
+    sql_query #with no options, it will search in all string or text base field
   
   end
 	
@@ -26,8 +26,8 @@ With Option:
   #Post(title:string, content:text)
   class Post
   	
-  	include SqlQuery
-    	sql_query :fields => [:title, :content]
+    include SqlQuery
+    sql_query :fields => [:title, :content]
   
   end
 	
