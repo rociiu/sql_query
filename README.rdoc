@@ -1,8 +1,7 @@
 =SqlQuery
 ========
 
-Introduction goes here.
-
+It's a simple plugin that for search within model fields
 
 =Install Plugin
 
