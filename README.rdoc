@@ -1,17 +1,15 @@
 =SqlQuery
-========
 
 It's a simple plugin that for search within model fields
 
-=Install Plugin
+== Install Plugin
 
 Install plugin from github
 	
-	./script/plugin install git@github.com:rociiu/sql_query.git
+  ./script/plugin install git@github.com:rociiu/sql_query.git
 	
 
-Example
-=======
+=Example
 
 
 Without option:
