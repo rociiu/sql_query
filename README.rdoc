@@ -14,30 +14,30 @@ Install plugin from github
 
 Without option:
 
-	#Post(title:string, content:text)
-	class Post
-		
-		include SqlQuery
-	  	sql_query #with no options, it will search in all string or text base field
-	
-	end
+  #Post(title:string, content:text)
+  class Post
+  	
+  	include SqlQuery
+    	sql_query #with no options, it will search in all string or text base field
+  
+  end
 	
 With Option:
-	#Post(title:string, content:text)
-	class Post
-		
-		include SqlQuery
-	  	sql_query :fields => [:title, :content]
-	
-	end
+  #Post(title:string, content:text)
+  class Post
+  	
+  	include SqlQuery
+    	sql_query :fields => [:title, :content]
+  
+  end
 	
 Search:
 
-	Post.sql_search('hello') # it will generate sql 'SELECT * FROM "posts" WHERE ( title like '%hello%' or content like '%hello%') '
+  Post.sql_search('hello') # it will generate sql 'SELECT * FROM "posts" WHERE ( title like '%hello%' or content like '%hello%') '
 	
 Under the method sql_search is named_scope, so you can use it with will_paginate
 	
-	Post.sql_search('hello').paginate(:page => 1, :per_page => 15)
+  Post.sql_search('hello').paginate(:page => 1, :per_page => 15)
 
 	
 
