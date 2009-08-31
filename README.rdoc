@@ -1,13 +1,49 @@
-SqlQuery
+=SqlQuery
 ========
 
 Introduction goes here.
 
 
+=Install Plugin
+
+Install plugin from github
+	
+	./script/plugin install git@github.com:rociiu/sql_query.git
+	
+
 Example
 =======
+
+Without option:
+
+	#Post(title:string, content:text)
+	class Post
+		
+		include SqlQuery
+	  	sql_query #with no options, it will search in all string or text base field
+	
+	end
+	
+With Option:
+	#Post(title:string, content:text)
+	class Post
+		
+		include SqlQuery
+	  	sql_query :fields => [:title, :content]
+	
+	end
+	
+Search:
+
+	Post.sql_search('hello') # it will generate sql 'SELECT * FROM "posts" WHERE ( title like '%hello%' or content like '%hello%') '
+	
+Under the method sql_search is named_scope, so you can use it with will_paginate
+	
+	Post.sql_search('hello').paginate(:page => 1, :per_page => 15)
+
+	
 
 Example goes here.
 
 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+Copyright (c) 2009 [rociiu0112@gmail.com], released under the MIT license

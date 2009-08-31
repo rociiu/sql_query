@@ -20,7 +20,7 @@ module SqlQuery
       cons = cons_array.join(' or ')
       named_scope :sql_search, lambda { |query|
         h = {}
-        h[:query] = query
+        h[:query] = "%#{query}%"
         { :conditions => [cons, h]}
       }
     end
